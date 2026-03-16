@@ -1,0 +1,137 @@
+---
+title: "README.md"
+author: "Andy Melissa"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Credit Risk Prediction using Machine Learning
+
+## Project Overview
+
+Credit risk assessment is a critical task for financial institutions when deciding whether to approve loan applications. Incorrect credit decisions can lead to financial losses and increased default rates.
+
+This project applies machine learning techniques to predict loan default risk using historical lending data. The goal is to identify high-risk borrowers before issuing loans and support more informed lending decisions.
+
+---
+
+## Dataset
+
+The dataset used in this project comes from the **Lending Club Loan Data (2007–2018)**, which contains detailed information about borrowers and loan characteristics.
+Dataset source:
+https://www.kaggle.com/datasets/wordsforthewise/lending-club
+
+Key features include:
+
+* Loan amount
+* Interest rate
+* Debt-to-income ratio
+* Employment length
+* Annual income
+* Credit score
+* Loan purpose
+
+The target variable is:
+
+**loan_default**
+
+* `0` → Loan fully paid
+* `1` → Loan defaulted
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* XGBoost
+* Matplotlib
+* SQLite
+* Jupyter Notebook
+
+---
+
+## Machine Learning Models
+
+The following models were implemented:
+
+### Logistic Regression
+
+Used as a baseline model because it is widely used in traditional credit scoring systems.
+
+### Random Forest
+
+An ensemble learning model capable of capturing nonlinear relationships between borrower characteristics and loan default risk.
+
+### Weighted XGBoost
+
+A gradient boosting algorithm trained with class weighting to address class imbalance in the dataset.
+
+---
+
+## Model Performance
+
+| Model               | Precision (Default) | Recall (Default) | ROC-AUC  |
+| ------------------- | ------------------- | ---------------- | -------- |
+| Logistic Regression | 0.50                | 0.07             | 0.70     |
+| Random Forest       | 0.51                | 0.08             | 0.70     |
+| Weighted XGBoost    | **0.32**            | **0.68**         | **0.72** |
+
+The **Weighted XGBoost model** achieved the best performance for detecting defaulted loans.
+
+---
+
+## Key Findings
+
+* Credit score and debt-to-income ratio strongly influence default risk.
+* Addressing class imbalance significantly improves default detection.
+* Ensemble learning methods such as XGBoost outperform traditional models.
+
+---
+
+## Visualizations
+
+### ROC Curve Comparison
+
+![ROC Curve](images/roc_curve_credit_risk.png)
+
+### Feature Importance
+
+![Feature Importance](images/feature_importance_credit_risk.png)
+
+---
+
+## Project Workflow
+
+1. Data Cleaning and Preprocessing
+2. Handling Missing Values
+3. Feature Encoding
+4. Exploratory Data Analysis
+5. Machine Learning Model Training
+6. Model Evaluation
+7. Feature Importance Analysis
+
+---
+
+## Future Improvements
+
+* Hyperparameter tuning
+* Advanced feature engineering
+* Deployment as a real-time credit risk prediction system
+
+---
+
+## Author
+
+**Andy Melissa Nkou Mbida**
+
+Bachelor of Computer Applications – Data Science
+Lovely Professional University
+
+Aspiring Data Scientist specializing in **financial analytics and risk modeling**.
+
